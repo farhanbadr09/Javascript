@@ -9,24 +9,34 @@ const ordersSet = new Set([
   "Pizza",
 ]);
 
-console.log(ordersSet);
-console.log(new Set("Jonas"));
-console.log(ordersSet.size);
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+console.log(rest.set(2, "Lisbo, Portugal"));
 
-console.log(ordersSet.has("Pizza"));
-console.log(ordersSet.has("Bread"));
-ordersSet.add("Garlic");
-ordersSet.add("Garlic");
-ordersSet.delete("Risotto");
-// ordersSet.clear();
-console.log(ordersSet);
+rest
+  .set("categories", ["Italiano", "Pizzeria", "Vegetarian", "Organic"])
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "We are open :D")
+  .set(false, "We are closed :(");
+console.log(rest.get("name"));
+console.log(rest.get(true));
 
-for (const order of ordersSet) console.log(order);
+// Example
+const time = 8;
+rest.get(time > rest.get("open") && time < rest.get("close"));
 
-//Example
-const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+const mob = new Map();
+mob.set("sumsung", "S1");
+mob.set("Oppo", "A1");
+mob.delete("sumsung");
+const ar = [...new Set(mob)];
+console.log(ar);
 
-const mn = new Set(["abc", "jah"]);
-console.log([...new Set(mn)]);
+let myMap = new Map().set("a", 1).set("b", 2);
+const bn = [];
+for (const [name, value] of myMap) {
+  bn.push({ name, value });
+}
+console.log(bn);

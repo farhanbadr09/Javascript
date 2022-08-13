@@ -69,3 +69,14 @@ if (names.length > 0) console.log(users[0].name);
 else {
   console.log("Hey user is empty");
 }
+
+console.log("^^^^^^^^^^");
+const std = ["jack", "root", "roy", "jemis"];
+let change = { ...new Object(std) };
+let change_ = Object.entries(std);
+let find = change?.jack ?? "not";
+console.log(change);
+console.log(change_);
+let mov = Object.values(change);
+let prac = mov[9] ?? "ajd";
+console.log(mov[9]);
